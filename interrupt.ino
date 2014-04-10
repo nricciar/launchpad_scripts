@@ -10,7 +10,7 @@
 #include "driverlib/timer.h"
 #include "driverlib/sysctl.h"
 
-void SamplerInterrupt(void)
+void Timer0Interrupt(void)
 {
   // clear the timer interrupt
   ROM_TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
@@ -26,7 +26,7 @@ void setup()
   // initialise the sampler interrupt
   ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
   ROM_TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);
-  TimerIntRegister(TIMER0_BASE, TIMER_A, SamplerInterrupt);
+  TimerIntRegister(TIMER0_BASE, TIMER_A, Timer0Interrupt);
   ROM_TimerEnable(TIMER0_BASE, TIMER_A);
   ROM_IntEnable(INT_TIMER0A);
   ROM_TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);

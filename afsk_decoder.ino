@@ -1,3 +1,10 @@
+/*
+ A start of a AFSK decoder for the Tiva C Series EK-TM4C1294XL
+ 
+ This code is not complete, and can only do some basic tone detection
+ currently. Will not decode AFSK signals yet.
+ 
+ */
 #include "Energia.h"
 #include "inc/hw_ints.h"
 #include "inc/hw_memmap.h"
